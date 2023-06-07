@@ -28,12 +28,12 @@
                     <label for="" class="m-2">Ordenar por: </label>
                     <select name="ordem" id="" class="form-select" aria-label="Default select example">
                         <option disabled selected>-- selecionar ordem --</option>
-                        <option value="title">Titulo</option>
-                        <option value="created_at">Data de criação</option>
+                        <option value="title" {{ $ordem == 'title' ? 'selected' : '' }}>Título</option>
+                        <option value="created_at" {{ $ordem == 'created_at' ? 'selected' : '' }}>Data de criação</option>
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <input id="search-input" name="title_filter" type="text" class="form-control" placeholder="Filtrar por titulo">
+                    <input id="search-input" name="title_filter" type="text" class="form-control" placeholder="Filtrar por titulo" value="{{ $filtroTitulo }}">
                     <button type="submit" class="btn btn-primary">Filtrar</button>
                 </div>
 

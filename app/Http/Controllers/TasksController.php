@@ -45,7 +45,12 @@ class TasksController extends Controller
                 $formattedDates[] = $formattedDate;
             }
     
-            return view('tasks', ['tasks' => $tasks, 'formattedDates' => $formattedDates]);
+            return view('tasks', [
+                'tasks' => $tasks,
+                'formattedDates' => $formattedDates,
+                'ordem' => $ordem,
+                'filtroTitulo' => $filtroTitulo,
+            ]);
         }
     
         return redirect('/login');
