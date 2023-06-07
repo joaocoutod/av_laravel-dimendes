@@ -29,7 +29,6 @@ cd av_laravel
 cp .env.example .env
 ```
 
-* Crie a base de dados com o nome av_laravel
 
 * Atualize as variáveis de ambiente do arquivo .env (opcional)
 ```dosini
