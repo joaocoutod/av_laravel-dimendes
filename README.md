@@ -46,10 +46,16 @@ php artisan server
 
 <hr>
 
-## Sistema de tarefas
+## Desafio - Sistema de tarefas 
 
 1. Exibir uma lista de tarefas;
 2. Adicionar uma nova tarefa;
 3. Editar uma tarefa existente;
 4. Excluir uma tarefa.
+
+## Bonus que foi implementado
+
+1. autenticação de usuário para que apenas usuários autenticados possam gerenciar as tarefas;
+3. Adicionar um filtro de pesquisa para permitir que os usuários encontrem tarefas específicas;
+4. Adicionar recursos de ordenação para classificar as tarefas por título ou data de criação.
 
