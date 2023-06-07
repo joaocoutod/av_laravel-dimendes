@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->string('id_dono', 6);
             $table->timestamps();
         });
     }
