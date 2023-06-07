@@ -9,25 +9,6 @@ cd my-project/
 ```
 
 
-Crie o Arquivo .env
-```sh
-cp .env.example .env
-```
-
-
-Atualize as variáveis de ambiente do arquivo .env (opcional)
-```dosini
-APP_NAME=Dev_teste
-
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=av_laravel
-DB_USERNAME=root
-DB_PASSWORD=root
-
-```
-
 Instale as dependências do projeto
 ```sh
 composer install
