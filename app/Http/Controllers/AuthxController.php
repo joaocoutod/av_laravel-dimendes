@@ -20,7 +20,7 @@ class AuthxController extends Controller
         if($user){
             if (Hash::check($request->password, $user->password))  {//valida senha
                 Auth::login($user); // autentica o usuário
-                return redirect('/user/'.Auth::user()->id);
+                return redirect('/perfil');
             }
         }
 
@@ -65,7 +65,7 @@ class AuthxController extends Controller
             // Autenticar o usuário após o cadastro
             Auth::login($user);
 
-            return redirect('/user/' . Auth::user()->id);
+            return redirect('/perfil');
         } else {
             return back()->with('error', 'Erro ao fazer cadastro');
         }

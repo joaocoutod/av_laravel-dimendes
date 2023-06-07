@@ -10,15 +10,11 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function perfil_view($id){ 
+    public function perfil_view(){ 
 
-        $user = User::where('id', $id)->First();
-        
-        if($user){
-            return view('/user/perfil', ['user' => $user]);
-        }else {
-            return redirect('/login');
-        }
+        if(Auth::check() == true){ return view('/user/perfil'); }
+
+        return redirect('/login'); 
 
     }
 

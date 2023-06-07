@@ -6,7 +6,7 @@
 
 <main class="form-signin text-light">
     
-    <form method="POST" action="/auth/login" class="ml-1" style="padding-top: 40px;padding-bottom: 40px;">
+    <form method="POST" action="/LGN99232232" class="ml-1" style="padding-top: 40px;padding-bottom: 40px;">
         @csrf
         <h1 class="h3 mb-3 fst-italic fw-normal text-center">Login</h1>
         

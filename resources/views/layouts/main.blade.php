@@ -15,8 +15,7 @@
         <header class="d-flex justify-content-center py-3">
           <ul class="nav nav-pills">
             <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="/clientes" class="nav-link">Clientes</a></li>
-            <li class="nav-item"><a href="/servicos" class="nav-link">Serviços</a></li>
+            <li class="nav-item"><a href="/perfil" class="nav-link">Perfil</a></li>
           </ul>
         </header>
     </div>
