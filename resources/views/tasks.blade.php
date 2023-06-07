@@ -20,7 +20,26 @@
 @endif
 
 @if(count($tasks) != 0)
+    <div class="row g-3 justify-content-center pb-4">
+        <div class="col-md-3">
+            <form action="/" method="POST">
+                @csrf
+                <div class="input-group mb-3">
+                    <label for="" class="m-2">Ordenar por: </label>
+                    <select name="ordem" id="" class="form-select" aria-label="Default select example">
+                        <option disabled selected>-- selecionar ordem --</option>
+                        <option value="title">Titulo</option>
+                        <option value="created_at">Data de criação</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <input id="search-input" name="title_filter" type="text" class="form-control" placeholder="Filtrar por titulo">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
 
+            </form>
+        </div>
+    </div>
     <div class="container  table-responsive">
         <table class="table text-center table-hover" >
             <thead class="table-dark">
@@ -83,7 +102,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST" action="/UPDTASK2312312">
+                                    <form method="POST" action="/task/UPDTASK2312312">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$task->id}}">
 
@@ -96,7 +115,7 @@
                                         <button type="submit" class="btn btn-primary w-100">Alterar titulo</button>
                                     </form>
 
-                                    <form method="POST" action="/UPDTASK2312312" class="mb-5">
+                                    <form method="POST" action="/task/UPDTASK2312312" class="mb-5">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$task->id}}">
 
@@ -139,7 +158,7 @@
                                         
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
-                                            <a class="btn btn-danger" href="/DELTASK2312312/{{$task->id}}">Deletar</a>
+                                            <a class="btn btn-danger" href="/task/DELTASK2312312/{{$task->id}}">Deletar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +185,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form method="POST" action="/INSTASK2312312">
+            <form method="POST" action="/task/INSTASK2312312">
                 @csrf
                 <div class="row g-3">
                     <div class="col-sm-12 mb-3">

@@ -14,21 +14,40 @@ class TasksController extends Controller
 {   
 
     // VISUALIZAR TASK
-    public function tasks_view(){
-        // Valida autenticação para visualizar a página
-        if (Auth::check() == true) {
-            $tasks = Tasks::all();
+    public function tasks_view(Request $request){
 
+        // Valida autenticação para visualizar a página
+        if (Auth::check()) {
+            $ordem = $request->input('ordem');
+            $filtroTitulo = $request->input('title_filter');
+    
+            // Consulta inicial de todas as tarefas
+            $query = Tasks::query();
+    
+            // Aplicar filtro por título, se fornecido
+            if ($filtroTitulo) {
+                $query->where('title', 'like', '%' . $filtroTitulo . '%');
+            }
+    
+            // Ordenar as tarefas de acordo com a opção selecionada ou por data de criação
+            if ($ordem == 'title') {
+                $query->orderBy('title');
+            } else {
+                $query->orderBy('created_at', 'desc');
+            }
+    
+            $tasks = $query->get();
+    
             // Formata as datas para exibir
             $formattedDates = [];
             foreach ($tasks as $item) {
                 $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('d-m-Y');
                 $formattedDates[] = $formattedDate;
             }
-            
+    
             return view('tasks', ['tasks' => $tasks, 'formattedDates' => $formattedDates]);
         }
-
+    
         return redirect('/login');
     }
 
@@ -73,7 +92,7 @@ class TasksController extends Controller
         if($request->title){
             // verifica se o titulo ja existe
             if (Tasks::where('title', $request->title)->where('id', '!=', $request->id)->first()) {
-                return back()->with('error', 'O titulo ('.$request->name.') já existe!');
+                return back()->with('error', 'O titulo ('.$request->title.') já existe!');
             }
 
             $upd_title = Tasks::where('id', $request->id)
