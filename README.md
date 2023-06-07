@@ -42,3 +42,14 @@ php artisan migrate
 ```sh
 php artisan server
 ```
+
+
+<hr>
+
+## Sistema de tarefas
+
+1. Exibir uma lista de tarefas;
+2. Adicionar uma nova tarefa;
+3. Editar uma tarefa existente;
+4. Excluir uma tarefa.
+
