@@ -5,7 +5,7 @@ git clone https://github.com/joaocoutod/av_laravel.git
 
 ```
 ```sh
-cd my-project/
+cd av_laravel/
 ```
 
 
