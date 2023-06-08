@@ -28,6 +28,9 @@ class TasksController extends Controller
             if ($filtroTitulo) {
                 $query->where('title', 'like', '%' . $filtroTitulo . '%');
             }
+
+            // exibir tasks de usuario logado
+            $query->where('id_dono', Auth::user()->id);
     
             // Ordenar as tarefas de acordo com a opção selecionada ou por data de criação
             if ($ordem == 'title') {
